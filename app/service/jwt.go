@@ -12,7 +12,7 @@ type Claims struct {
 	jwt.StandardClaims
 }
 
-var jwtSecret = []byte("gomyinit")
+var jwtSecret = []byte("go_error_book")
 
 func GenerateToken(username, password string) (string, error) {
 	nowTime := time.Now()
