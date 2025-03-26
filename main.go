@@ -40,9 +40,11 @@ func main() {
 
 	//先执行获取配置
 	utils.InitMysqlConf()
+	fmt.Print("mysql配置")
 	utils.InitAppConf()
+	fmt.Print("app配置")
 	utils.InitRedisConf()
-	utils.InitLogger()
+	// utils.InitLogger()
 	DbError := utils.InitMySQL(utils.MysqlConfig.User, utils.MysqlConfig.Password, utils.MysqlConfig.Host, utils.MysqlConfig.Port, utils.MysqlConfig.Db)
 	if DbError != nil {
 		fmt.Print("数据库连接错误")

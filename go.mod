@@ -27,10 +27,10 @@ require (
 	github.com/golang/protobuf v1.5.2 // indirect
 	github.com/google/go-cmp v0.6.0 // indirect
 	github.com/gookit/color v1.5.4 // indirect
-	github.com/gookit/filter v1.1.4 // indirect
-	github.com/gookit/goutil v0.6.18 // indirect
+	github.com/gookit/filter v1.1.2 // indirect
+	github.com/gookit/goutil v0.5.5 // indirect
 	github.com/gookit/gsr v0.1.0 // indirect
-	github.com/gookit/slog v0.5.8 // indirect
+	github.com/gookit/slog v0.3.3 // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/josharian/intern v1.0.0 // indirect
 	github.com/kennygrant/sanitize v1.2.4 // indirect
@@ -57,7 +57,7 @@ require (
 	github.com/goccy/go-json v0.10.2 // indirect
 	github.com/gocolly/colly v1.2.0
 	github.com/golang-jwt/jwt v3.2.2+incompatible
-	github.com/gookit/validate v1.4.6
+	github.com/gookit/validate v1.4.2
 	github.com/jinzhu/gorm v1.9.16
 	github.com/json-iterator/go v1.1.12 // indirect
 	github.com/klauspost/cpuid/v2 v2.2.5 // indirect

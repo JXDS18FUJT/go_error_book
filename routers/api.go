@@ -18,7 +18,7 @@ func InitApiRouter(r *gin.Engine) {
 	api := r.Group("api")
 	api.GET("nong/:id", apiValid.NongValid)
 	api.GET("login", apiValid.LoginValid)
-	api.GET("colly", apiValid.CollyValid)
+
 	api.GET("dylogin", apiValid.DyloginValid)
 	api.GET("client_token", apiValid.ClientTokenValid)
 	api.GET("schemav2", apiValid.Schemav2Valid)
