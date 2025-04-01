@@ -19,7 +19,7 @@ func InitApiRouter(r *gin.Engine) {
 	//开启登录检测
 	api.Use(middleware.Token())
 	api.GET("nong/:id", apiValid.NongValid)
-
+	api.GET("userInfo", apiValid.UserinfoValid)
 	api.GET("dylogin", apiValid.DyloginValid)
 	api.GET("client_token", apiValid.ClientTokenValid)
 	api.GET("schemav2", apiValid.Schemav2Valid)

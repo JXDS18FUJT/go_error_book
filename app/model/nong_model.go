@@ -8,11 +8,11 @@ import (
 //设置主键
 
 type Nong struct {
-	Id         int          `json:"id"`
-	Name       string       `json:"name"`
-	Content    string       `json:"content"`
-	InsertTime global.XTime `json:"insert_time"`
-	UpdateTime global.XTime `json:"update_time"`
+	Id        int          `json:"id"`
+	Name      string       `json:"name"`
+	Content   string       `json:"content"`
+	CreatedAt global.XTime `json:"created_at"`
+	UpdatedAt global.XTime `json:"updated_at"`
 }
 
 func CreateNong(nong *Nong) (err error) {

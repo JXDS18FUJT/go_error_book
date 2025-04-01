@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	//必须引入到项目里347613781qq.com/goInit1/docs初始化
+
 	_ "347613781qq.com/goInit1/docs"
 	"347613781qq.com/goInit1/routers"
 	"347613781qq.com/goInit1/utils"
@@ -58,6 +59,12 @@ func main() {
 	// utils.Redis.Set(utils.RedisCtx, "wxname2", "张三", 0)
 	var r = gin.Default()
 	routers.InitApiRouter(r)
+	// var user = model.User{
+	// 	Username:     "admin",
+	// 	PasswordHash: "123456",
+	// 	Status:       1,
+	// }
+	// model.CreateUser(&user)
 	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 	//格式化
 	r.Run(fmt.Sprintf(":%d", utils.AppConfig.Port))
