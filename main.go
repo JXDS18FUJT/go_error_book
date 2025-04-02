@@ -66,6 +66,7 @@ func main() {
 	// }
 	// model.CreateUser(&user)
 	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
+
 	//格式化
 	r.Run(fmt.Sprintf(":%d", utils.AppConfig.Port))
 
