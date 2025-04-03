@@ -2,6 +2,7 @@ package apiControl
 
 import (
 	"context"
+	"fmt"
 	"time"
 
 	bindtypes "347613781qq.com/goInit1/app/http/bindTypes"
@@ -15,6 +16,7 @@ func Login(c *gin.Context) {
 	var obj = bindtypes.Login{}
 
 	c.ShouldBind(&obj)
+	fmt.Println("Username:"+obj.Username, "Password:"+obj.Password)
 	user, err := model.GetUser(obj.Username)
 
 	if user.Username != obj.Username {

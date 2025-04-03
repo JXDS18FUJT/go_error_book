@@ -1,6 +1,8 @@
 package apiControl
 
 import (
+	"fmt"
+
 	"347613781qq.com/goInit1/app/model"
 	"347613781qq.com/goInit1/app/service"
 	"github.com/gin-gonic/gin"
@@ -28,8 +30,18 @@ func Userinfo(c *gin.Context) {
 
 	}
 	user, err := model.GetUser(claims.Username)
+	fmt.Println("name:" + claims.Username)
+	if err != nil {
+		c.JSON(200, gin.H{
+			"code": 400,
+			"msg":  "查不到该人" + claims.Username,
+		})
+		return
+
+	}
+	fmt.Print(claims.Username)
 	c.JSON(200, gin.H{
-		"code": 400,
+		"code": 200,
 		"msg":  "",
 		"data": user,
 	})
