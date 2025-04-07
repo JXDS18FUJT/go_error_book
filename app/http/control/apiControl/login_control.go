@@ -41,6 +41,7 @@ func Login(c *gin.Context) {
 	ctx := context.Background()
 	err = utils.Redis.Set(ctx, "token:"+username, token, 2*time.Hour).Err()
 	if err != nil {
+		return
 
 	}
 
