@@ -53,6 +53,32 @@ DELETE FROM `file_uploads`;
 /*!40000 ALTER TABLE `file_uploads` DISABLE KEYS */;
 /*!40000 ALTER TABLE `file_uploads` ENABLE KEYS */;
 
+-- 导出  表 error_book.questions 结构
+CREATE TABLE IF NOT EXISTS `questions` (
+  `uuid` int(11) NOT NULL,
+  `id` varchar(11) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `type` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `question` varchar(1500) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `option1` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `option2` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `option3` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `option4` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `answer` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `image` varchar(1000) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `difficulty` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `wrong_count` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `correct_count` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  PRIMARY KEY (`uuid`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='驾驶员之家抓题表';
+
+-- 正在导出表  error_book.questions 的数据：~0 rows (大约)
+DELETE FROM `questions`;
+/*!40000 ALTER TABLE `questions` DISABLE KEYS */;
+INSERT INTO `questions` (`uuid`, `id`, `type`, `question`, `option1`, `option2`, `option3`, `option4`, `answer`, `image`, `difficulty`, `wrong_count`, `correct_count`) VALUES
+	(2088, '2250', NULL, '在高速公路上行车时，错过当前要驶出的出口时，应当在应急停车道上停车，等待车辆较少的时候再伺机倒车。', '正确', '错误', '错误', '错误', '', './pic3', NULL, NULL, NULL),
+	(2089, '2251', NULL, '在高速公路上行车时，错过当前要驶出的出口时，应当在应急停车道上停车，等待车辆较少的时候再伺机倒车。', '正确', '错误', '错误', '错误', '', './pic4', NULL, NULL, NULL);
+/*!40000 ALTER TABLE `questions` ENABLE KEYS */;
+
 -- 导出  表 error_book.users 结构
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -64,12 +90,11 @@ CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- 正在导出表  error_book.users 的数据：1 rows
+-- 正在导出表  error_book.users 的数据：2 rows
 DELETE FROM `users`;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` (`id`, `username`, `password_hash`, `created_at`, `updated_at`, `status`) VALUES
-	(1, 'admin', '123456', '2025-04-01 17:21:44', '2025-04-01 17:21:44', 1),
-	(2, 'vzjtu609', 'yujun1006', '2025-04-09 16:18:41', '2025-04-09 16:19:13', 1);
+	(1, 'admin', '123456', '2025-04-01 17:21:44', '2025-04-01 17:21:44', 1);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
