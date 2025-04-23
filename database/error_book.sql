@@ -71,7 +71,7 @@ CREATE TABLE IF NOT EXISTS `questions` (
   PRIMARY KEY (`uuid`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='驾驶员之家抓题表';
 
--- 正在导出表  error_book.questions 的数据：~0 rows (大约)
+-- 正在导出表  error_book.questions 的数据：~2 rows (大约)
 DELETE FROM `questions`;
 /*!40000 ALTER TABLE `questions` DISABLE KEYS */;
 INSERT INTO `questions` (`uuid`, `id`, `type`, `question`, `option1`, `option2`, `option3`, `option4`, `answer`, `image`, `difficulty`, `wrong_count`, `correct_count`) VALUES
@@ -90,11 +90,11 @@ CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- 正在导出表  error_book.users 的数据：2 rows
+-- 正在导出表  error_book.users 的数据：1 rows
 DELETE FROM `users`;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` (`id`, `username`, `password_hash`, `created_at`, `updated_at`, `status`) VALUES
-	(1, 'admin', '123456', '2025-04-01 17:21:44', '2025-04-01 17:21:44', 1);
+	(1, 'vzjtu609', 'yujun1006', '2025-04-01 17:21:44', '2025-04-23 10:20:58', 1);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
