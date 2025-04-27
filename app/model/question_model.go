@@ -1,9 +1,5 @@
 package model
 
-import (
-	"347613781qq.com/goInit1/utils"
-)
-
 //设置主键
 
 type Question struct {
@@ -18,36 +14,36 @@ type Question struct {
 	Image    string `form:"image" json:"image" validate:"required"`
 }
 
-func CreateQuestion(question *Question) (err error) {
-	err = utils.DB.Create(&question).Error
-	return
-}
-func CreateQuestions(questions *[]Question) (err error) {
-	err = utils.DB.Create(questions).Error
-	return
-}
-func UpdateQuestion(question *Question) (err error) {
-	err = utils.DB.Save(&question).Error
-	return
-}
-func DeleteQuestion(id int) (err error) {
+// func CreateQuestion(question *Question) (err error) {
+// 	err = utils.DB.Create(&question).Error
+// 	return
+// }
+// func CreateQuestions(questions *[]Question) (err error) {
+// 	err = utils.DB.Create(questions).Error
+// 	return
+// }
+// func UpdateQuestion(question *Question) (err error) {
+// 	err = utils.DB.Save(&question).Error
+// 	return
+// }
+// func DeleteQuestion(id int) (err error) {
 
-	err = utils.DB.First("id=?", id).Delete(&Question{}).Error
-	return
-}
-func GetQuestion(id int) (question Question, err error) {
-	if utils.DB == nil {
-		return Question{}, nil
-	}
+// 	err = utils.DB.First("id=?", id).Delete(&Question{}).Error
+// 	return
+// }
+// func GetQuestion(id int) (question Question, err error) {
+// 	if utils.DB == nil {
+// 		return Question{}, nil
+// 	}
 
-	err = utils.DB.Limit(1).Where("id = ?", id).First(&question).Error
-	return question, err
+// 	err = utils.DB.Limit(1).Where("id = ?", id).First(&question).Error
+// 	return question, err
 
-}
-func GetAllQuestion() (questionList []Question, err error) {
+// }
+// func GetAllQuestion() (questionList []Question, err error) {
 
-	if err = utils.DB.Find(&questionList).Error; err != nil {
-		return nil, err
-	}
-	return
-}
+// 	if err = utils.DB.Find(&questionList).Error; err != nil {
+// 		return nil, err
+// 	}
+// 	return
+// }

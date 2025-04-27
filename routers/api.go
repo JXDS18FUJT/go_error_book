@@ -15,11 +15,10 @@ func InitApiRouter(r *gin.Engine) {
 	//启动跨域
 	r.Use(middleware.Cors())
 	r.POST("login", apiValid.LoginValid)
-	r.POST("question", apiValid.QuestionValid)
 	api := r.Group("api")
 	//开启登录检测
 	api.Use(middleware.Token())
-	api.GET("nong/:id", apiValid.NongValid)
+	// api.GET("tag/list", apiValid.NongValid)
 	api.GET("userInfo", apiValid.UserinfoValid)
 	api.GET("dylogin", apiValid.DyloginValid)
 	api.GET("client_token", apiValid.ClientTokenValid)
